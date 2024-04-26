@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.viewpagerandrecyclerview.data.DataStore
 import com.example.viewpagerandrecyclerview.databinding.FragmentViewPagerItemBinding
 
 class ViewPagerItemFragment : Fragment() {
 
     private lateinit var binding: FragmentViewPagerItemBinding
+
+    private val sampleAdapter = SampleItemAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +29,8 @@ class ViewPagerItemFragment : Fragment() {
     }
 
     private fun setupViews() {
-
+        binding.recyclerView.adapter = sampleAdapter
+        sampleAdapter.submitList(DataStore.sampleItems)
     }
 
 }
