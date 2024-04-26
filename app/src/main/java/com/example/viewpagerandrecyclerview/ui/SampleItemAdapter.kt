@@ -11,7 +11,7 @@ class SampleItemAdapter :
     ListAdapter<SampleItemModel, SampleItemAdapter.ViewHolder>(SampleItemDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemSampleBinding.inflate(layoutInflater)
+        val binding = ItemSampleBinding.inflate(layoutInflater, parent,false)
         return ViewHolder(binding)
     }
 

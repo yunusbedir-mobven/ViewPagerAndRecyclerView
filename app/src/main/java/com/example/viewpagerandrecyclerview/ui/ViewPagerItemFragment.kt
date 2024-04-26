@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.viewpagerandrecyclerview.data.DataStore
 import com.example.viewpagerandrecyclerview.databinding.FragmentViewPagerItemBinding
+import com.example.viewpagerandrecyclerview.databinding.ItemSampleBinding
 
 class ViewPagerItemFragment : Fragment() {
 
@@ -19,7 +20,7 @@ class ViewPagerItemFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentViewPagerItemBinding.inflate(inflater, container, false)
+        binding = FragmentViewPagerItemBinding.inflate(inflater)
         return binding.root
     }
 
@@ -30,6 +31,7 @@ class ViewPagerItemFragment : Fragment() {
 
     private fun setupViews() {
         binding.recyclerView.adapter = sampleAdapter
+        binding.recyclerView2.adapter = sampleAdapter
         sampleAdapter.submitList(DataStore.sampleItems)
     }
 
